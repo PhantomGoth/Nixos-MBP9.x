@@ -15,7 +15,7 @@
       # boot.loader.systemd-boot.enable = true;
       # boot.loader.efi.canTouchEfiVariables = true;
       boot.loader.grub.enable = true;
-      boot.loader.grub.devices = [ "nodev" ];
+      boot.loader.grub.device = [ "nodev" ];
       boot.loader.grub.efiInstallAsRemovable = true;
       boot.loader.grub.efiSupport = true;
       boot.loader.grub.useOSProber = true;
@@ -28,9 +28,7 @@
       # Per-interface useDHCP will be mandatory in the future, so this generated config
       # replicates the default behaviour.
       networking.useDHCP = false;
-      networking.interfaces.enp0s25.useDHCP = true;
-      networking.interfaces.wlp2s0.useDHCP = true;
-      networking.networkmanager.enable = true;
+      networking.interfaces. .useDHCP = true;
       
       
       # Configure network proxy if necessary
@@ -58,14 +56,11 @@
         firefox
         discord
         wirelesstools
-        pkgs.broadcom-sta
         broadcom-bt-firmware
-        synapse
       ];
       
       
       nixpkgs.config.allowUnfree = true;
-      services.compton.enable = true;
       services.flatpak.enable = true;
       xdg.portal.enable = true;
       # xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
@@ -117,17 +112,10 @@
       
       # Enable touchpad support.
       services.xserver.libinput.enable = true;
-      libinput.naturalScrolling = true;
-      libinput.middleEmulation = false;
-      libinput.tapping = true;
-      libinput.clickMethod = "clickfinger";
-      libinput.horizontalScrolling = false;
-      libinput.disableWhileTyping = true;
       
       # Enable the KDE Desktop Environment.
       services.xserver.displayManager.lightdm.enable = true;
       services.xserver.desktopManager.plasma5.enable = true;
-      services.xserver.windowManager.
       
       
       # Define a user account. Don't forget to set a password with ‘passwd’.
