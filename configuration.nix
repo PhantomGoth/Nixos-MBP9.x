@@ -15,7 +15,7 @@
       # boot.loader.systemd-boot.enable = true;
       # boot.loader.efi.canTouchEfiVariables = true;
       boot.loader.grub.enable = true;
-      boot.loader.grub.device = [ "nodev" ];
+      boot.loader.grub.devices = [ "nodev" ];
       boot.loader.grub.efiInstallAsRemovable = true;
       boot.loader.grub.efiSupport = true;
       boot.loader.grub.useOSProber = true;
@@ -54,17 +54,11 @@
         wget 
         vim 
         firefox
-        discord
         wirelesstools
         broadcom-bt-firmware
       ];
-      
-      
-      nixpkgs.config.allowUnfree = true;
-      services.flatpak.enable = true;
-      xdg.portal.enable = true;
-      # xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
-      
+           
+      nixpkgs.config.allowUnfree = true;     
       
       # Some programs need SUID wrappers, can be configured further or are
       # started in user sessions.
